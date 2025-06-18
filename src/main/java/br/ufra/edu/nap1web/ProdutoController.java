@@ -10,9 +10,9 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/produtos")
-public class ProdutosController {
+public class ProdutoController {
     @Autowired
-    private IProduto produtos;
+    private ProdutoRepository produtos;
 
     @GetMapping
     public List<Produto> listar() {
