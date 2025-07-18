@@ -1,37 +1,59 @@
-Segue uma versão melhorada, com correções de ortografia, instruções mais claras e formatação aprimorada:
+# nap1-web
 
-```markdown
-## API de Produtos com Spring Boot e PostgreSQL
+API REST para controle de produtos.
 
-### Instruções
+## Pré-requisitos
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/SrPatoS/nap1-web.git
-   cd nap1-web
-   ```
+- Java 17
+- Maven
+- Docker
 
-2. Certifique-se de ter o **JDK** e o **Docker** instalados em sua máquina.
+## Como começar
 
-3. Instale as dependências do projeto:
-   ```bash
-   ./mvnw clean install
-   ```
+### Usando Docker
 
-4. Inicie o banco de dados PostgreSQL com Docker Compose:
-   ```bash
-   docker compose up -d
-   ```
+Para subir o container da aplicação e o banco de dados PostgreSQL, execute o seguinte comando:
 
-5. Execute a aplicação:
-   ```bash
-   ./mvnw spring-boot:run
-   ```
+```bash
+docker-compose up -d
+```
 
-Pronto! A API estará disponível para uso.
-### Endpoints Disponíveis
-- `GET /produtos`: Retorna todos os produtos.
-- `GET /produtos/{id}`: Retorna um produto específico pelo ID.
-- `POST /produtos`: Cria um novo produto.
-- `PUT /produtos/{id}`: Atualiza um produto existente pelo ID.
-- `DELETE /produtos/{id}`: Remove um produto pelo ID.
+A aplicação estará disponível em `http://localhost:8080`.
+
+### Executando localmente
+
+Para executar a aplicação localmente, primeiro inicie o banco de dados com o Docker:
+
+```bash
+docker-compose up -d postgres
+```
+
+Em seguida, execute a aplicação com o Maven:
+
+```bash
+./mvnw spring-boot:run
+```
+
+## Endpoints da API
+
+| Método | Caminho      | Descrição                               |
+|--------|--------------|-------------------------------------------|
+| GET    | /produtos    | Lista todos os produtos.                  |
+| POST   | /produtos    | Adiciona um novo produto.                 |
+| GET    | /produtos/{id} | Busca um produto pelo ID.                 |
+| PUT    | /produtos/{id} | Atualiza um produto existente.            |
+| DELETE | /produtos/{id} | Deleta um produto.                        |
+
+## Banco de dados
+
+A aplicação utiliza um banco de dados PostgreSQL executando em um container Docker. As credenciais do banco de dados são:
+
+- **Host**: localhost
+- **Porta**: 5432
+- **Banco de dados**: produto
+- **Usuário**: admin
+- **Senha**: 123
+
+## Coleção do Postman
+
+O arquivo `Produtos.postman_collection.json` contém uma coleção do Postman com exemplos de requisições para todos os endpoints da API.
