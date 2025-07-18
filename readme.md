@@ -44,6 +44,10 @@ Em seguida, execute a aplicação com o Maven:
 | PUT    | /produtos/{id} | Atualiza um produto existente.            |
 | DELETE | /produtos/{id} | Deleta um produto.                        |
 
+## Vídeo de demonstração
+
+[![Vídeo de demonstração](https://img.youtube.com/vi/c24I_09e3k0/0.jpg)](https://youtu.be/c24I_09e3k0)
+
 ## Banco de dados
 
 A aplicação utiliza um banco de dados PostgreSQL executando em um container Docker. As credenciais do banco de dados são:
